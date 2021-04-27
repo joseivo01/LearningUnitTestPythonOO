@@ -26,5 +26,14 @@ class TestDatas(unittest.TestCase):
         self.conta.transfere(valorDeTransferencia, self.conta_destino)
         
     #Verificar que ao transderir o destino exista e se tem valor suficiente
+    
+    
+    
+    ###############   BAD WAY ############
+    def test_checkWithdrawBadWay(self):
+        valorDeSaque = 400
+        with self.assertRaises(RuntimeError):
+            self.conta.saca(valorDeSaque)
+    
 if __name__ == '__main__':
     unittest.main()

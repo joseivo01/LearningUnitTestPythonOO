@@ -21,10 +21,12 @@ class Conta:
     def transfere(self, valor, destino):
         if(self.get_saldo() < valor):
             raise RuntimeError("Valor de saldo insuficiente")
-        if(destino == None or destino.get_limite_disponivel() < valor):
-            raise RuntimeError("Destinatario não existe ou não possui limite")
-            self.saca(valor)
-            destino.deposita(valor)
+        if(destino == None):
+            raise RuntimeError("Destinatario não existe!")
+        if(destino.get_limite_disponivel() < valor):
+            raise RuntimeError("Destinatario não possui limite disponivel suficiente")
+        self.saca(valor)
+        destino.deposita(valor)
         
     def get_saldo(self):
         return self.__saldo
