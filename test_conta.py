@@ -15,7 +15,6 @@ class TestDatas(unittest.TestCase):
         self.conta.deposita(700)
         self.assertEqual(self.conta.get_saldo(), 1000)
         
-    #verificar se o valor é realmente retirado, se houver saldo suficiente
     def test_checkWithdraw(self):
         valorDeSaque = 300
         self.conta.saca(valorDeSaque)
@@ -24,10 +23,6 @@ class TestDatas(unittest.TestCase):
     def test_checkRecipient(self):
         valorDeTransferencia = 300
         self.conta.transfere(valorDeTransferencia, self.conta_destino)
-        
-    #Verificar que ao transderir o destino exista e se tem valor suficiente
-    
-    
     
     ###############   BAD WAY ############
     def test_checkWithdrawBadWay(self):

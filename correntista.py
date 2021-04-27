@@ -1,9 +1,12 @@
-#limite é o limite que o correntista pode armazenar
+#from conta import Conta
+
+#funciona passar um objeto no init de uma classe python, mesmo sem necessidade de importar para o arquivo
 class Correntista:
-    def __init__(seft,cpf,nome,limite,Conta):
+    def __init__(self, nome, cpf, Conta):
         self.__cpf = cpf
         self.__nome = nome
-        self.__limite = limite
+        #limite está em conta não em correntista
+        #self.__limite = limite
         self.__conta = Conta
 
     def getCpf(self):
@@ -17,12 +20,13 @@ class Correntista:
 
     def setNome(nome):
         self.__nome = nome
-
-    def getLimite(self):
-        return self.__limite
-    
-    def getLimite(self):
-        self.__limite = self.Limite
-
-    def getConta():
+        
+    #tá tudo tranquilo enquanto não tá usando esse metodo...
+    def addConta(self):
+        self.__conta = Conta()
+        
+    def getConta(self):
+        if(self.__conta == None):
+            raise RuntimeError("Cliente não possui conta no banco")
         return self.__conta
+        
